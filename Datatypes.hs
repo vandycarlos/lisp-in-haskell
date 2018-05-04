@@ -1,8 +1,11 @@
-module Datatypes ( LispVal(..), LispError(..), ThrowsError, IOThrowsError, Env, nullEnv, throwError, catchError, trapError, extractValue, runErrorT, liftThrows, liftIO ) where
+module Datatypes (
+  LispVal(..), LispError(..), ThrowsError, IOThrowsError, Env,
+  nullEnv, throwError, catchError, trapError, extractValue, runErrorT, liftThrows, liftIO ) where
+  
 import Control.Monad.Error
 import Text.ParserCombinators.Parsec(ParseError)
 import Data.IORef
-import IO (Handle)
+import System.IO (Handle)
 
 -- Scheme Datatypes
 
