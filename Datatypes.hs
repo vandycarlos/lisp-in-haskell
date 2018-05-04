@@ -57,12 +57,12 @@ showVal (Number contents) = show contents
 showVal (Float contents) = show contents
 showVal (Rational contents) = show contents
 showVal (String contents) = "\"" ++ contents ++ "\""
-showVal (Bool True) = "#t"
-showVal (Bool False) = "#f"
+showVal (Bool True) = "true"
+showVal (Bool False) = "false"
 showVal (Char x) = '#':'\\':x:[]
 showVal (PrimitiveFunc _) = "<primitive>"
 showVal (Func {params = args, vararg = varargs, body = body, closure = env}) = 
-  "(lambda (" ++ unwords (map show args) ++ 
+  "(fn (" ++ unwords (map show args) ++ 
      (case varargs of 
         Nothing -> ""
         Just arg -> " . " ++ arg) ++ ") ...)"
